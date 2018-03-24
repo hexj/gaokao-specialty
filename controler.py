@@ -21,8 +21,7 @@ def write_data(title, code,subject, class_, name, intro):
     try:
         cursor.execute('''
     INSERT INTO edu_spider_ch (title, code,subject, class, name, intro)
-    VALUES (?, ?, ?, ?, ?, ?)
-    ''', insert_data)
+    VALUES (?, ?, ?, ?, ?, ?)''', (title, code,subject, class_, name, intro))
     except Exception as e:
         print e
         pass
