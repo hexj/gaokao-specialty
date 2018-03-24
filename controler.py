@@ -15,7 +15,7 @@ def write_data(title, code,subject, class_, name, intro):
     conn = pymysql.connect(host='127.0.0.1',port=3306,user='root',passwd='pass',db='edu',charset='utf8')
     cursor = conn.cursor()
     #对数据解码为unicode
-    insert_data = map(_decode_utf8, (title, code,subject, class_, name, intro))
+    title, code,subject, class_, name, intro = map(_decode_utf8, (title, code,subject, class_, name, intro))
 
     #插入数据
     try:
