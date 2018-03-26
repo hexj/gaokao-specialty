@@ -2,11 +2,15 @@
 #-*-coding:utf-8-*-
 
 import pymysql
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 
 #用来处理用Python的sqlite3操作数据库要插入的字符串中含有中文字符的时候报错处理，配合map
 def _decode_utf8(str):
-    # return str.encode('utf-8','ignore').decode('utf-8')
-    return str.decode('gbk').encode('utf-8')
+    return str.encode('utf-8','ignore').decode('utf-8')
+    # return str.decode('gbk').encode('utf-8')
 
 
 
