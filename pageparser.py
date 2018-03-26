@@ -49,15 +49,15 @@ def get_specialtyDetail(html):
     detail = {}
     soup = BeautifulSoup(html,"html.parser")
     text = str(soup.select('div[class="li-majorMess"]')[0].text)
-    # subject_index = text.find('学科：') # -1 not found
-    # class_index = text.find('门类：')
-    # name_index = text.find('专业名称：')
-    # target_index = text.find('业务培养目标：')
+    subject_index = text.find('学科：') # -1 not found
+    class_index = text.find('门类：')
+    name_index = text.find('专业名称：')
+    target_index = text.find('业务培养目标：')
     
 
-    # detail['subject'] = text[subject_index+9:class_index-8] if not subject_index == -1 and not class_index == -1 else ''
-    # detail['class'] = text[class_index+9:name_index-8] if not class_index == -1 and not name_index == -1 else ''
-    # detail['name'] = text[name_index+15:target_index-10] if not name_index == -1 and not target_index == -1 else ''
-    # detail['intro'] = text[target_index:] if not target_index == -1 else text
+    detail['subject'] = text[subject_index+9:class_index-8] if not subject_index == -1 and not class_index == -1 else ''
+    detail['class'] = text[class_index+9:name_index-8] if not class_index == -1 and not name_index == -1 else ''
+    detail['name'] = text[name_index+15:target_index-10] if not name_index == -1 and not target_index == -1 else ''
+    detail['intro'] = text[target_index:] if not target_index == -1 else text
 
-    return  text
+    return  detail
