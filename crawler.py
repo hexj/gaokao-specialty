@@ -10,7 +10,7 @@ import string
 import os
 import sys
 reload(sys)
-sys.setdefaultencoding('utf-8')
+sys.setdefaultencoding('utf8')
 
 
 main_url = 'http://gkcx.eol.cn'
@@ -32,15 +32,15 @@ def main(entrance):
 
         spe_url = main_url + url
         spe_html = downloader.get_html(spe_url)
-        detail = pageparser.get_specialtyDetail(spe_html)
+        intro = pageparser.get_specialtyDetail(spe_html)
 
-        subject = detail['subject']
-        class_ = detail['class']
-        name = detail['name']
-        intro = detail['intro']        
+        # subject = detail['subject']
+        # class_ = detail['class']
+        # name = detail['name']
+        # intro = detail['intro']        
         
 
-        controler.write_data(title, code,subject, class_, name, intro)
+        controler.write_data(title, code, intro)
         # print 'title:{},code:{},subject:{},class:{},name:{},intro:{}'.format(title, code,subject, class_, name, intro)
 
 
