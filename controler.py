@@ -22,7 +22,7 @@ def write_data(title, code,subject, class_, name, intro):
     #     cursor.execute('''
     # INSERT INTO edu_spider_ch (title, code,subject, class, name, intro,popularity)
     # VALUES (?, ?, ?, ?, ?, ?,?)''', (title, code,subject, class_, name, intro,""))
-        cursor.execute('INSERT INTO edu_spider_ch (title, code,subject, class, name, intro)VALUES("{}","{}","{}","{}","{}","{}")'.format(title, code,subject, class_, name, intro))
+        cursor.execute("INSERT INTO edu_spider_ch (title, code,subject, class, name, intro)VALUES('{}','{}','{}','{}','{}','{}')".format(title, code,subject, class_, name, intro))
     except Exception as e:
         print e
         pass

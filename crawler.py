@@ -40,9 +40,8 @@ def main(entrance):
         intro = detail['intro']        
         
 
-        controler.write_data(title, code,subject, class_, name, intro)
-        #print 'title:{},code:{},subject:{},class:{},name:{},intro:{}'.format(title, code,subject, class_, name, intro)
-        # print title, code,subject, class_, name, intro
+       controler.write_data(title, code,subject, class_, name, intro)
+        # print 'title:{},code:{},subject:{},class:{},name:{},intro:{}'.format(title, code,subject, class_, name, intro)
 
 
 
